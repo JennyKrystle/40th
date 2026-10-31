@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kanazawa Birthday Trip</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#f8f5f0;--dark:#1c1915;--gold:#b8862a;--gold-soft:#d9b76a;--camel:#c19a6b;--paper:#fffdf9;--line:#e5ddd0;--muted:#6f675c;--snow:#eef2f5;--red:#a33b2e}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--dark);font-family:'Jost',sans-serif;font-weight:300;line-height:1.6;font-size:16px}
+h1,h2,h3,h4,h5{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
+a{color:var(--gold);text-decoration:none}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+.hero{background:var(--dark);color:var(--ivory);padding:64px 16px 46px;text-align:center}
+.hero .script{font-family:'Great Vibes',cursive;font-size:clamp(40px,9vw,64px);color:var(--gold-soft);line-height:1}
+.hero h1{font-size:clamp(28px,6vw,46px);font-weight:500;margin-top:6px}
+.hero .dates{margin-top:12px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc8bd}
+.hero .badges{margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero .hb{border:1px solid rgba(217,183,106,.45);border-radius:999px;padding:5px 14px;font-size:12.5px;color:var(--gold-soft)}
+nav{position:sticky;top:0;background:rgba(28,25,21,.97);z-index:50}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:9px 16px}
+nav a{color:var(--ivory);font-size:12px;letter-spacing:.07em;text-transform:uppercase;padding:7px 12px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+nav a:hover{border-color:var(--gold);color:var(--gold-soft)}
+section{padding:44px 0 4px}
+.kick{letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:var(--gold);margin-bottom:6px}
+.title{font-size:clamp(26px,4.4vw,34px);margin-bottom:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:26px;overflow:hidden}
+.head{background:var(--dark);color:var(--ivory);padding:16px 22px}
+.head h3{font-size:23px;font-weight:500}
+.head .ag{font-size:12.5px;color:var(--gold-soft);margin-top:3px}
+.body{padding:16px 22px}
+.step{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.step:last-child{border-bottom:none}
+.sn{min-width:32px;height:32px;border:1.5px solid var(--gold);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px}
+.step h4{font-size:17.5px;margin-bottom:2px}
+.tl{font-size:13px;color:#39536b;margin-bottom:5px}
+.step p{font-size:14.5px;color:#4c463d;margin-bottom:4px}
+ol.how{font-size:14px;color:#33475a;background:var(--snow);border-radius:8px;padding:10px 12px 10px 30px;margin:6px 0}
+ol.how li{margin:3px 0}
+.order{font-size:14px;color:#6b5310;background:#faf3e4;border-radius:6px;padding:6px 10px;margin:6px 0}
+.jp{font-size:15px;font-weight:500;color:var(--dark)}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.links a{display:inline-block;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:5px 13px;font-size:12.5px}
+.links a:hover{background:var(--gold);color:#fff}
+.route{background:var(--dark);color:var(--ivory);border-radius:12px;padding:15px 18px;margin:12px 0;text-align:center}
+.route .rt{font-family:'Cormorant Garamond',serif;font-size:19px}
+.route .rt b{color:var(--gold-soft)}
+.route .rd{display:flex;justify-content:space-between;gap:10px;font-size:13px;color:#d8d2c7;margin-top:6px;flex-wrap:wrap}
+.route .rm{font-size:12.5px;color:#a49b8e;margin-top:6px}
+.hotel{background:#fbf8f1;border:1px solid #e8dcc0;border-radius:12px;padding:14px 16px;margin:12px 0}
+.hotel h5{font-size:19px;margin-bottom:6px}
+.row{display:flex;gap:10px;font-size:14px;padding:5px 0;border-top:1px dashed #e8dcc0}
+.row .k{min-width:96px;color:var(--muted);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+.meals{background:var(--snow);border-radius:12px;padding:12px 16px;margin:14px 0 4px}
+.meal{display:flex;gap:12px;padding:6px 0;font-size:14.5px;color:#33475a;border-top:1px dashed #d4dde4}
+.meal:first-child{border-top:none}
+.meal .mk{min-width:88px;font-weight:500}
+.bday{background:linear-gradient(135deg,#f4e8cf,#faf3e4);border:1px solid var(--gold-soft);border-radius:12px;padding:14px 16px;margin:12px 0}
+.bday h5{font-size:20px;color:#7c5a14}
+.bday p{font-size:14.5px;color:#57503f;margin-top:4px}
+.note{background:#fbeeec;border-left:4px solid var(--red);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:14px;color:#5c2c25}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px;margin:10px 0}
+th{background:var(--dark);color:var(--ivory);text-align:left;padding:9px 12px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;font-size:11px}
+td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+td.d{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);white-space:nowrap;font-size:15px}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.box h5{font-size:18.5px;margin-bottom:4px}
+.box p{font-size:14.5px;color:#4c463d}
+.wall{display:flex;flex-wrap:wrap;gap:8px}
+.wall a{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 13px;font-size:13px;color:#6b5310}
+footer{background:var(--dark);color:#a49b8e;text-align:center;padding:36px 16px;margin-top:50px;font-size:13px}
+footer .script{font-family:'Great Vibes',cursive;font-size:30px;color:var(--gold-soft)}
+@media(max-width:560px){.row .k{min-width:80px}}
+
+/* ✦ magical 40th theme ✦ */
+:root{--ivory:#faf6ee;--dark:#16193a;--night:#0f1230;--gold:#a87a22;--gold-soft:#e6c77d;--champ:#f3e3bc;--paper:#fffdf8;--line:#ecdfc4;--snow:#f1f3f9}
+body{background:#faf6ee;background-image:radial-gradient(circle at 12% 18%,rgba(230,199,125,.16) 0 2px,transparent 3px),radial-gradient(circle at 78% 62%,rgba(230,199,125,.14) 0 1.5px,transparent 2.5px),radial-gradient(circle at 42% 88%,rgba(168,122,34,.10) 0 1.5px,transparent 2.5px);background-size:260px 260px,340px 340px,420px 420px}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,#3b2f5c 0%,#1d1f4a 45%,#0b0d26 100%);padding:84px 16px 64px}
+.hero>*{position:relative;z-index:2}
+.hero .stars,.hero .stars2{position:absolute;inset:0;z-index:1;pointer-events:none}
+.hero .stars{background-image:radial-gradient(1.5px 1.5px at 8% 20%,#fff,transparent),radial-gradient(1px 1px at 22% 70%,#f6e7c1,transparent),radial-gradient(2px 2px at 35% 30%,#fff,transparent),radial-gradient(1px 1px at 48% 12%,#fff,transparent),radial-gradient(1.5px 1.5px at 62% 78%,#f6e7c1,transparent),radial-gradient(1px 1px at 74% 26%,#fff,transparent),radial-gradient(2px 2px at 86% 55%,#fff,transparent),radial-gradient(1px 1px at 94% 14%,#f6e7c1,transparent),radial-gradient(1.5px 1.5px at 15% 92%,#fff,transparent),radial-gradient(1px 1px at 55% 50%,#fff,transparent);animation:twinkle 4s ease-in-out infinite alternate}
+.hero .stars2{background-image:radial-gradient(1px 1px at 12% 45%,#fff,transparent),radial-gradient(1.5px 1.5px at 28% 10%,#f6e7c1,transparent),radial-gradient(1px 1px at 40% 85%,#fff,transparent),radial-gradient(2px 2px at 68% 40%,#f6e7c1,transparent),radial-gradient(1px 1px at 80% 88%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 35%,#fff,transparent),radial-gradient(1px 1px at 5% 65%,#f6e7c1,transparent);animation:twinkle 5.5s ease-in-out infinite alternate-reverse}
+@keyframes twinkle{from{opacity:.35}to{opacity:1}}
+.flake{position:absolute;top:-20px;z-index:1;color:#f3e3bc;opacity:.8;font-size:12px;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{0%{transform:translateY(-10px) rotate(0)}100%{transform:translateY(520px) rotate(200deg);opacity:0}}
+.hero .forty{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(84px,22vw,150px);line-height:.9;background:linear-gradient(110deg,#b8862a 0%,#f8e7b5 30%,#d4a64a 50%,#fff3d1 65%,#b8862a 100%);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 0 18px rgba(230,199,125,.35))}
+@keyframes shine{to{background-position:250% center}}
+.hero .script{color:#f3e3bc;text-shadow:0 0 22px rgba(230,199,125,.55)}
+.hero h1{letter-spacing:.02em}
+.hero .dates{color:#d9d4ea}
+.hero .hb{background:rgba(255,255,255,.06);border-color:rgba(230,199,125,.55);backdrop-filter:blur(3px)}
+.hero .moon{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:#e6c77d;margin-bottom:10px}
+nav{background:rgba(15,18,48,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(230,199,125,.35)}
+nav a:hover{border-color:var(--gold-soft)}
+.kick{color:var(--gold)}
+.kick::before{content:"✦ ";color:var(--gold-soft)}
+.title{background:linear-gradient(90deg,#16193a,#5a4a8a 60%,#a87a22);-webkit-background-clip:text;background-clip:text;color:transparent}
+.title::after{content:"";display:block;width:64px;height:2px;margin-top:10px;background:linear-gradient(90deg,var(--gold),transparent)}
+.card{border-color:var(--line);box-shadow:0 6px 24px -14px rgba(22,25,58,.35)}
+.head{position:relative;background:linear-gradient(120deg,#16193a,#2c2a5e 70%,#4a3a6e);overflow:hidden}
+.head::after{content:"✦  ·  ✧  ·  ✦";position:absolute;right:16px;top:12px;color:rgba(230,199,125,.45);font-size:11px;letter-spacing:.2em}
+.route{background:linear-gradient(120deg,#16193a,#2c2a5e);border:1px solid rgba(230,199,125,.35)}
+th{background:#16193a}
+.sn{background:#fffaf0;border-color:var(--gold-soft);box-shadow:0 0 0 3px rgba(230,199,125,.15)}
+.box{border-color:var(--line)}
+.bday{background:linear-gradient(135deg,#fdf3dc,#f6ead2 50%,#efe3f5);border-color:var(--gold-soft);box-shadow:0 0 30px -12px rgba(230,199,125,.9)}
+#d5 .card{border:1.5px solid var(--gold-soft);box-shadow:0 0 40px -14px rgba(212,166,74,.9)}
+#d5 .head{background:linear-gradient(120deg,#3b2a5e,#7a5a9e 60%,#b8862a)}
+#d5 .kick{font-size:12px}
+footer{background:radial-gradient(ellipse at 50% 0%,#2c2a5e,#0b0d26);position:relative}
+footer .script{color:#f3e3bc;text-shadow:0 0 18px rgba(230,199,125,.6)}
+@media (prefers-reduced-motion:reduce){.hero .stars,.hero .stars2,.flake,.hero .forty{animation:none}.flake{display:none}}
+
+/* ✦ more magic ✦ */
+body{position:relative}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(1.6px 1.6px at 7% 12%,rgba(212,166,74,.55),transparent),radial-gradient(1.2px 1.2px at 23% 48%,rgba(212,166,74,.45),transparent),radial-gradient(2px 2px at 41% 8%,rgba(212,166,74,.4),transparent),radial-gradient(1.2px 1.2px at 63% 33%,rgba(122,90,158,.35),transparent),radial-gradient(1.8px 1.8px at 82% 71%,rgba(212,166,74,.5),transparent),radial-gradient(1.2px 1.2px at 92% 18%,rgba(212,166,74,.45),transparent),radial-gradient(1.6px 1.6px at 15% 86%,rgba(122,90,158,.3),transparent),radial-gradient(1.4px 1.4px at 55% 92%,rgba(212,166,74,.45),transparent);animation:twinkle 5s ease-in-out infinite alternate}
+section,footer,nav,.hero{position:relative;z-index:1}
+nav{z-index:50}
+.title{background:linear-gradient(100deg,#16193a 0%,#4b3d80 35%,#b8862a 50%,#4b3d80 65%,#16193a 100%);background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 9s linear infinite}
+.dayscript{font-family:'Great Vibes',cursive;font-size:34px;line-height:1;color:#b8862a;margin:-2px 0 2px;text-shadow:0 0 14px rgba(230,199,125,.45)}
+.sparkle{text-align:center;color:#d4a64a;letter-spacing:.9em;font-size:13px;margin:34px 0 -18px;opacity:.85;position:relative;z-index:1}
+.sparkle span{display:inline-block;animation:twinkle 2.6s ease-in-out infinite alternate}
+.sparkle span:nth-child(2){animation-delay:.8s;color:#7a5a9e}.sparkle span:nth-child(3){animation-delay:1.6s}
+.card{transition:box-shadow .3s ease,transform .3s ease}
+.card:hover{box-shadow:0 10px 34px -12px rgba(184,134,42,.55)}
+.head{background-image:radial-gradient(1.2px 1.2px at 12% 30%,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 38% 75%,rgba(243,227,188,.8),transparent),radial-gradient(1.4px 1.4px at 66% 22%,rgba(255,255,255,.6),transparent),radial-gradient(1px 1px at 84% 64%,rgba(243,227,188,.8),transparent),linear-gradient(120deg,#16193a,#2c2a5e 70%,#4a3a6e)}
+#d5 .head{background-image:radial-gradient(1.4px 1.4px at 10% 30%,#fff,transparent),radial-gradient(1.2px 1.2px at 30% 70%,#f3e3bc,transparent),radial-gradient(1.6px 1.6px at 55% 25%,#fff,transparent),radial-gradient(1.2px 1.2px at 75% 70%,#f3e3bc,transparent),linear-gradient(120deg,#3b2a5e,#7a5a9e 60%,#b8862a)}
+.ribbon{display:inline-block;margin-top:8px;padding:4px 14px;border-radius:999px;background:linear-gradient(90deg,#b8862a,#f3dfa6,#b8862a);background-size:200% auto;animation:shine 4s linear infinite;color:#3b2a14;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.route{background-image:radial-gradient(1px 1px at 15% 30%,rgba(255,255,255,.6),transparent),radial-gradient(1.2px 1.2px at 85% 60%,rgba(243,227,188,.7),transparent),linear-gradient(120deg,#16193a,#2c2a5e)}
+.links a{background:linear-gradient(#fffdf8,#fffdf8) padding-box,linear-gradient(120deg,#b8862a,#e6c77d,#7a5a9e) border-box;border:1.5px solid transparent}
+.links a:hover{background:linear-gradient(120deg,#b8862a,#d4a64a) padding-box,linear-gradient(120deg,#b8862a,#e6c77d,#7a5a9e) border-box;color:#fff}
+footer .moon{font-size:34px;filter:drop-shadow(0 0 12px rgba(243,227,188,.8))}
+@media (prefers-reduced-motion:reduce){body::before,.title,.sparkle span,.ribbon{animation:none}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="stars"></div><div class="stars2"></div><span class="flake" style="left:6%;animation-duration:11s;animation-delay:0s;font-size:11px">❄</span><span class="flake" style="left:17%;animation-duration:14s;animation-delay:3s;font-size:9px">✦</span><span class="flake" style="left:29%;animation-duration:12s;animation-delay:6s;font-size:13px">❄</span><span class="flake" style="left:41%;animation-duration:16s;animation-delay:1s;font-size:8px">✧</span><span class="flake" style="left:53%;animation-duration:13s;animation-delay:4s;font-size:12px">❄</span><span class="flake" style="left:64%;animation-duration:15s;animation-delay:7s;font-size:9px">✦</span><span class="flake" style="left:76%;animation-duration:11s;animation-delay:2s;font-size:14px">❄</span><span class="flake" style="left:88%;animation-duration:17s;animation-delay:5s;font-size:9px">✧</span><span class="flake" style="left:95%;animation-duration:12s;animation-delay:8s;font-size:11px">❄</span>
+  <div class="moon">✦ A birthday under winter stars ✦</div>
+  <h1>Kanazawa + Shirakawa-go</h1>
+  <div class="dates">December 3 to 9, 2026 · Jenny &amp; Prince John · PAL YWL8A7</div>
+  <div class="badges"><span class="hb">🎂 Birthday · Sat Dec 5</span><span class="hb">❄️ Snow Village · Sun Dec 6</span><span class="hb">✨ Gold leaf · Fri Dec 4</span></div>
+</div>
+
+<nav><div class="wrap">
+  <a href="#glance">At a Glance</a><a href="#before">Book</a><a href="#buylist">Tickets</a><a href="#transport">Getting Around</a><a href="#budget">Budget</a><a href="#d3">Dec 3</a><a href="#d4">Dec 4</a><a href="#d5">Dec 5 🎂</a><a href="#d6">Dec 6</a><a href="#d7">Dec 7</a><a href="#d8">Dec 8</a><a href="#d9">Dec 9</a><a href="#eat">Eat</a><a href="#shop">Shop</a><a href="#tips">Tips</a><a href="#links">Links</a>
+</div></nav>
+
+<section class="wrap" id="glance">
+  <div class="kick">Step by step</div>
+  <h2 class="title">At a Glance</h2>
+  <table>
+    <tr><th>Day</th><th>Leave</th><th>Ride</th></tr>
+    <tr><td class="d">Thu 3</td><td>Bicol Airport by 9:15 AM</td><td>PAL 11:15 AM → Manila 12:25 PM · <b>PR432</b> 3:25 PM → Narita T2 8:35 PM → Skyliner to Ueno</td></tr>
+    <tr><td class="d">Fri 4</td><td>APA lobby 9:45 AM</td><td><b>Kagayaki 509</b> · Ueno 10:28 AM → Kanazawa 12:49 PM</td></tr>
+    <tr><td class="d">Sat 5</td><td>Sleep in · leave 10:30 AM</td><td>All walking 🎂</td></tr>
+    <tr><td class="d">Sun 6</td><td>Sleep in · taxi 10:40 AM</td><td><b>Bus</b> · West exit stop 4 · 11:10 AM → 12:25 PM · back 3:55 PM → 5:20 PM</td></tr>
+    <tr><td class="d">Mon 7</td><td>Sleep in · leave 10:45 AM</td><td>All walking</td></tr>
+    <tr><td class="d">Tue 8</td><td>Checkout 11:00 AM</td><td><b>Kagayaki 534</b> · Kanazawa 1:50 PM → Ueno 4:14 PM → Skyliner to Narita T2</td></tr>
+    <tr><td class="d">Wed 9</td><td>Hotel shuttle 6:30 AM</td><td><b>PR431</b> 9:20 AM → Manila 1:40 PM · PAL 5:35 PM → Daraga 6:45 PM</td></tr>
+  </table>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="before">
+  <div class="kick">Bookings</div>
+  <h2 class="title">What to Book, When</h2>
+  <table>
+    <tr><th>Date</th><th>What</th><th>Where</th></tr>
+    <tr><td class="d">Done ✅</td><td>Flights · APA · Intergate (non-smoking, 2033478779) · Toyoko Inn</td><td>PAL · Agoda</td></tr>
+    <tr><td class="d">Now</td><td>Check both passports: valid until at least June 2027 and with your <b>Japan visa</b> inside.</td><td></td></tr>
+    <tr><td class="d">Sun Nov 1</td><td><b>Kagayaki 509</b>, Fri Dec 4, Ueno 10:28 AM → Kanazawa 12:49 PM. 2 adults, Ordinary Car, no seat preference, <b>Free to change</b>. ₱6,050 each.</td><td><a href="https://www.klook.com/en-PH/" target="_blank">Klook</a></td></tr>
+    <tr><td class="d">Sun Nov 1</td><td><b>Kagayaki 534</b>, Tue Dec 8, Kanazawa 1:50 PM → Ueno 4:14 PM. Same settings. If 1:50 PM isn't listed, pick the Kagayaki closest to 2 PM.</td><td><a href="https://www.klook.com/en-PH/" target="_blank">Klook</a></td></tr>
+    <tr><td class="d">Sun Nov 1</td><td><b>Skyliner</b>, 2 adults, one way × 2: Narita Airport → Ueno (Dec 3) and Ueno → Narita Airport (Dec 8).</td><td><a href="https://www.klook.com/en-PH/activity/1410-skyliner-tokyo/" target="_blank">Klook</a></td></tr>
+    <tr><td class="d">Thu Nov 5</td><td>Call Itaru Honten for Sat Dec 5, 7:00 PM, 2 people. +81 76-221-4194.</td><td>Phone</td></tr>
+    <tr><td class="d">Fri Nov 6</td><td><b>Shirakawa-go bus</b>, Sun Dec 6. Out: Kanazawa Sta. West Exit 11:10 AM. Back: Shirakawa-go 3:55 PM. 2 adults each way. If 11:10 AM is gone, take 9:40 AM.</td><td><a href="https://japanbusonline.com/en/AreaSearch2/4170000/4162019" target="_blank">Japan Bus Online</a></td></tr>
+    <tr><td class="d">Mon Nov 30</td><td>Pay the Philippine travel tax online, ₱1,620 each. Save the receipts. Fill in <b>Visit Japan Web</b> (immigration + customs) for both of you and screenshot the QR codes.</td><td><a href="https://tieza.gov.ph" target="_blank">TIEZA</a> · <a href="https://www.vjw.digital.go.jp/" target="_blank">Visit Japan Web</a></td></tr>
+    <tr><td class="d">Tue Dec 1</td><td><b>eTravel (leaving PH)</b> for both of you. (opens 72 hours before). Screenshot the QR codes.</td><td><a href="https://etravel.gov.ph" target="_blank">eTravel</a></td></tr>
+    <tr><td class="d">Wed Dec 2</td><td>PAL online check-in. Charge the Simo. Have your ¥120,000 cash. Pack passports, visa, travel tax receipts.</td><td><a href="https://www.philippineairlines.com" target="_blank">PAL</a></td></tr>
+    <tr><td class="d">Mon Dec 7</td><td><b>eTravel (arriving PH)</b> for Dec 9, both of you. Screenshot the QR codes.</td><td><a href="https://etravel.gov.ph" target="_blank">eTravel</a></td></tr>
+    <tr><td class="d">Sat Dec 5 night</td><td>Look at the Shirakawa-go webcam for snow.</td><td><a href="https://shirakawa-going.jp/en/" target="_blank">Webcam</a></td></tr>
+  </table>
+  <div class="box"><h5>💴 Cash</h5><p>Bring ¥120,000. Cash for Kenroku-en, Shirakawa-go, markets and small shops; cards for hotels and big dinners. 7-Eleven ATMs for top-ups.</p></div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="buylist">
+  <div class="kick">Shopping list</div>
+  <h2 class="title">Tickets to Buy</h2>
+  
+  <h4 style="font-family:Cormorant Garamond,serif;font-size:21px;margin:14px 0 6px">🎫 Tickets</h4>
+  <table><tr><th></th><th>Item</th><th>Details</th><th>Price</th><th>Link</th></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Bullet train, Dec 4</b> · <i>Nov 1</i></td><td>Kagayaki 509 · Ueno 10:28 AM → Kanazawa 12:49 PM · 2 adults · Ordinary Car · Free to change</td><td>about ₱12,380</td><td><a href="https://www.klook.com/en-PH/" target="_blank">Klook ↗</a></td></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Bullet train, Dec 8</b> · <i>Nov 1</i></td><td>Kagayaki 534 · Kanazawa 1:50 PM → Ueno 4:14 PM · 2 adults · Ordinary Car · Free to change</td><td>about ₱12,380</td><td><a href="https://www.klook.com/en-PH/" target="_blank">Klook ↗</a></td></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Skyliner</b> · <i>Nov 1</i></td><td>2 one-way tickets × 2 adults: Narita T2 → Ueno (Dec 3) and Ueno → Narita T2 (Dec 8).</td><td>about ₱4,200</td><td><a href="https://www.klook.com/en-PH/activity/1410-skyliner-tokyo/" target="_blank">Klook ↗</a></td></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Shirakawa-go bus</b> · <i>Fri Nov 6</i></td><td>Dec 6 · Kanazawa 11:10 AM out, Shirakawa-go 3:55 PM back · 2 adults each way</td><td>pay online</td><td><a href="https://www.kosokubus.com/en/special/kanazawa_shirakagwago.html" target="_blank">Japan Bus Online ↗</a></td></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>PH travel tax</b> · <i>by Nov 30</i></td><td>2 people · save the receipts</td><td>₱3,240</td><td><a href="https://tieza.gov.ph" target="_blank">TIEZA ↗</a></td></tr></table>
+  <h4 style="font-family:Cormorant Garamond,serif;font-size:21px;margin:18px 0 6px">☔ Rain gear</h4>
+  <table><tr><th></th><th>Item</th><th>Details</th><th>Price</th><th>Link</th></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Uniqlo UV Protection Compact Umbrella</b></td><td>Off White, folds small for your bag</td><td>₱990</td><td><a href="https://www.uniqlo.com/ph/en/products/E486199-000/00" target="_blank">Uniqlo ↗</a></td></tr><tr><td><input type="checkbox" style="width:18px;height:18px;accent-color:#8a6a4a"></td><td><b>Water-repellent spray</b></td><td>For your sneakers. Spray 2 days before you fly.</td><td></td><td><a href="https://shopee.ph/search?keyword=water%20repellent%20spray%20shoes" target="_blank">Shopee ↗</a></td></tr></table>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="transport">
+  <div class="kick">Step by step</div>
+  <h2 class="title">Getting Around Japan</h2>
+  <div class="box"><h5>🚄 How Japanese trains work: 6 things to know</h5>
+    <ol class="how">
+      <li><b>Tickets are small paper cards.</b> Push them into the slot of the gate, walk through, and <b>take them back</b> from the slot on the other side. If you have 2 cards for one trip, put both in together.</li>
+      <li><b>The bullet train has its own second gate</b> inside the station (the Shinkansen gate). So at Ueno you go through two gates.</li>
+      <li><b>Your ticket tells you where to stand.</b> It shows the car (号車) and seat, for example 7号車 12番 A. On the platform floor, car numbers are painted where the doors will open. Stand on your number.</li>
+      <li><b>Trains leave on the exact minute.</b> Be on the platform 10 minutes early. Doors close about 30 seconds before departure and no one waits.</li>
+      <li><b>Kagayaki is all reserved.</b> Sit only in your seat. Get off when the screen and English announcement say <b>Kanazawa</b>.</li>
+      <li><b>Keep the Dec 8 tickets separate.</b> The machine at Ueno prints both trips. Put the Dec 8 cards inside a passport so they never go into a gate early.</li>
+    </ol>
+  </div>
+  <div class="box"><h5>🧳 Your suitcase on the bullet train</h5><p>No extra booking needed. Put it in the space <b>behind the last row of seats</b> in your car; board as soon as the doors open. Small bags go on the rack above.</p></div>
+
+  <div class="card"><div class="head"><h3>Dec 3 · Narita → Ueno</h3><div class="ag">Skyliner · ~45 min · Klook QR</div></div><div class="body">
+    <div class="step"><div class="sn">1</div><div><h4>After you collect your suitcase</h4><ol class="how">
+      <li>Walk out into the arrivals hall. Look up for the signs <b>Railways / 鉄道</b> and go down to B1.</li>
+      <li>Find the <b>blue Keisei counter</b> (not the red-and-green JR one). Show your <b>Klook Skyliner QR</b> and say: "Skyliner to Ueno, two adults." They give you seat tickets.</li>
+      <li>Insert your ticket(s) at the Keisei gate and take them back.</li>
+      <li>Your platform says <b>Skyliner</b>. Stand at the car number printed on the ticket.</li></ol></div></div>
+    <div class="step"><div class="sn">2</div><div><h4>On the Skyliner</h4><ol class="how">
+      <li>Suitcase goes in the luggage space by the doors.</li>
+      <li>Stay on until the <b>last stop, Keisei Ueno</b>. Do not get off at Nippori.</li>
+      <li>Insert the tickets at the exit gate (it keeps them). Go up to the street. The APA is across from the station.</li></ol></div></div>
+  </div></div>
+
+  <div class="card"><div class="head"><h3>Dec 4 · Ueno → Kanazawa</h3><div class="ag">Kagayaki 509 · 10:28 AM · Track 19 to 22, basement 4</div></div><div class="body">
+    <div class="step"><div class="sn">1</div><div><h4>Walk to JR Ueno · 9:45 AM</h4><ol class="how">
+      <li>From the APA, walk 5 minutes to <b>JR Ueno, Hirokoji exit (広小路口)</b>. JR is the big station, not Keisei.</li>
+      <li>Inside, look for the green machines marked <b>Reserved seat tickets / 指定席券売機</b>, near the <b>Central gate (中央改札)</b>.</li></ol></div></div>
+    <div class="step"><div class="sn">2</div><div><h4>Print your tickets</h4><ol class="how">
+      <li>Tap <b>English</b>, then the pickup option. Scan the <b>QR code</b> from your Klook ticket (Klook emails the exact pickup steps when the ticket is issued).</li>
+      <li>It prints the tickets for <b>both</b> Dec 4 and Dec 8. Check the dates. Put the Dec 8 ones away in a passport.</li>
+      <li>Stuck? Go to the staffed JR ticket office next to it and show the Klook ticket.</li></ol></div></div>
+    <div class="step"><div class="sn">3</div><div><h4>Gate 1: the Central gate</h4><ol class="how">
+      <li>Insert all of today's tickets together, walk through, take them all back.</li>
+      <li>Inside, buy <b>ekiben</b> (train bento) and coffee at the shops.</li></ol></div></div>
+    <div class="step"><div class="sn">4</div><div><h4>Gate 2: the Shinkansen gate</h4><ol class="how">
+      <li>Follow the <b>green Shinkansen / 新幹線</b> signs. You reach a second row of gates. Insert the same tickets again, take them back.</li>
+      <li>Take the long escalators down to <b>B4</b>. Look at the board for <b>Kagayaki 509 / かがやき 509 · 10:28</b> and its track number (19 to 22). The board may show a later end station like Tsuruga; that is fine, it stops at Kanazawa.</li></ol></div></div>
+    <div class="step"><div class="sn">5</div><div><h4>On the platform · by 10:15 AM</h4><ol class="how">
+      <li>Walk to the car number on your ticket (painted on the floor). Wait in line.</li>
+      <li>Board, put the suitcase behind the last row, find your seats (letters A to E above the windows).</li>
+      <li>Eat, rest. The ride is 2 hours 21 minutes. Set a phone alarm for <b>12:40 PM</b>.</li></ol></div></div>
+    <div class="step"><div class="sn">6</div><div><h4>Arrive Kanazawa · 12:49 PM</h4><ol class="how">
+      <li>Follow the yellow <b>Exit / 出口</b> signs. Insert today's tickets at the gate. It keeps them, that's normal.</li>
+      <li>Follow signs for the <b>East exit · Kenrokuen exit (東口 · 兼六園口)</b>. You come out at the big wooden Tsuzumi-mon gate.</li>
+      <li>The taxi line is right in front. Show <span class="jp">ホテルインターゲート金沢</span>.</li></ol></div></div>
+  </div></div>
+
+  <div class="card"><div class="head"><h3>Taxis in Kanazawa</h3><div class="ag">Your main way around · 5 to 7 min almost everywhere</div></div><div class="body">
+    <ol class="how">
+      <li>Wait at a taxi stand, or wave one with a red light on the windshield (空車 means free).</li>
+      <li>The <b>back left door opens and closes by itself</b>. Don't touch it.</li>
+      <li>Show the Japanese name on your phone. Every stop in this guide has it.</li>
+      <li>Pay at the end. Many taxis take cards; keep ¥2,000 cash ready just in case. No tipping.</li>
+    </ol>
+  </div></div>
+
+  <div class="card"><div class="head"><h3>Dec 6 · Bus to Shirakawa-go</h3><div class="ag">West exit · Stop 4 · QR ticket</div></div><div class="body">
+    <ol class="how">
+      <li>Taxi from the hotel. Show <span class="jp">金沢駅 西口</span> (Kanazawa Station <b>West</b> exit). This is the opposite side from the wooden gate.</li>
+      <li>Find <b>Bus Stop 4</b>. Be there 15 minutes early.</li>
+      <li>Show the Japan Bus Online QR on your phone to the driver. If the QR shows seat numbers, sit there.</li>
+      <li>Get off at <b>Shirakawa-go (白川郷)</b>, the bus terminal where everyone gets off.</li>
+      <li>Going home: the same terminal. Be there 15 minutes before your bus. You arrive back at the West exit. Take a taxi from the stand there to the hotel.</li>
+    </ol>
+  </div></div>
+
+  <div class="card"><div class="head"><h3>Dec 8 · Kanazawa → Ueno → Narita</h3><div class="ag">Kagayaki 534 · 1:50 PM · Skyliner</div></div><div class="body">
+    <div class="step"><div class="sn">1</div><div><h4>At Kanazawa Station · 1:30 PM</h4><ol class="how">
+      <li>Take out the <b>Dec 8 tickets</b> from the passport.</li>
+      <li>Follow the <b>Hokuriku Shinkansen / 北陸新幹線</b> signs to the Shinkansen gate. Insert, take back.</li>
+      <li>Find <b>Kagayaki 534 / かがやき 534 · Tokyo · 13:50</b> on the board and go to that track. Stand on your car number.</li></ol></div></div>
+    <div class="step"><div class="sn">2</div><div><h4>Get off at Ueno · 4:14 PM</h4><ol class="how">
+      <li>The train goes on to Tokyo. <b>Ueno is the stop before Tokyo.</b> Get ready when the screen says Ueno. Set an alarm for 4:05 PM.</li>
+      <li>Follow <b>Exit</b> signs up, through the gates (insert tickets, they keep them).</li>
+      <li>Follow signs for the <b>Shinobazu exit (不忍口)</b> and <b>Keisei Line</b>. Cross the street: Keisei Ueno is the station on the other side, about 7 minutes.</li></ol></div></div>
+    <div class="step"><div class="sn">3</div><div><h4>Skyliner to the airport</h4><ol class="how">
+      <li>Blue Keisei counter: show the <b>Klook Skyliner QR</b>, "Skyliner to Narita Airport, two adults."</li>
+      <li>Get off at <b>Narita Airport Terminal 2·3</b> (about 45 min). This is the stop before the last one.</li>
+      <li>Eat at Terminal 2, then the free Toyoko Inn shuttle: <b>Central exit, 1F, Bus Stop 31-B</b>, just past the taxi stand.</li></ol></div></div>
+  </div></div>
+
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="budget">
+  <div class="kick">Money</div>
+  <h2 class="title">Full Budget for Two</h2>
+  <p style="font-size:14px;color:var(--muted);margin-bottom:8px">Flights are paid. Rounded up, at ₱0.41 per yen.</p>
+  <table>
+    <tr><th>What</th><th>Yen</th><th>Pesos</th></tr>
+<tr><th>Stay</th><th></th><th></th></tr>
+<tr><td>🏨 APA Ueno · 1 night · from your booking</td><td>¥22,113</td><td>₱9,100</td></tr>
+<tr><td>🏙️ Intergate · 4 nights · from your booking</td><td>¥45,628</td><td>₱18,700</td></tr>
+<tr><td>🛏️ Toyoko Inn Narita · 1 night · from your booking</td><td>¥9,778</td><td>₱4,000</td></tr>
+<tr><td>City tax at check-in (Tokyo ¥100, Kanazawa ¥200 per person per night)</td><td>~¥2,500</td><td>₱1,000</td></tr>
+<tr><th>Getting around</th><th></th><th></th></tr>
+<tr><td>🚄 Kagayaki on Klook · 4 × ₱6,050 + Free to change</td><td>about ¥60,700</td><td>₱24,900</td></tr>
+<tr><td>🚆 Skyliner on Klook · 4 tickets</td><td>¥10,320</td><td>₱4,200</td></tr>
+<tr><td>🚌 Shirakawa-go bus · 4 × ¥2,800</td><td>¥11,200</td><td>₱4,600</td></tr>
+<tr><td>🚕 Taxis · 9 rides × ¥1,500</td><td>~¥13,500</td><td>₱5,500</td></tr>
+<tr><th>Food</th><th></th><th></th></tr>
+<tr><td>🦀 Birthday izakaya dinner · Itaru, snow crab + sake</td><td>~¥35,000</td><td>₱14,400</td></tr>
+<tr><td>🍜 Every other meal, counted one by one (ekiben, Jiyuken, Otsuka, Irori, Mori Mori, Turban Curry, Narita, konbini · no hotel breakfasts)</td><td>~¥58,900</td><td>₱24,100</td></tr>
+<tr><td>🍢 Izakaya night · Akadama oden + sake</td><td>~¥8,000</td><td>₱3,300</td></tr>
+<tr><td>🥩 Wagyu dinner · Ushimaru, A5 Noto beef</td><td>~¥20,000</td><td>₱8,200</td></tr>
+<tr><td>🍓 Desserts · Maccha House, Murahata parfait, Nodaya, extra sweets</td><td>~¥8,000</td><td>₱3,300</tr>
+<tr><td>🏪 Konbini, coffee, snacks, kairo</td><td>~¥15,000</td><td>₱6,200</td></tr>
+<tr><th>Entrances</th><th></th><th></th></tr>
+<tr><td>🎟️ Kenroku-en ¥640, Shigure-tei matcha, museum, gold leaf workshop, Wada House ¥800, shuttle ¥600, Nomura-ke</td><td>~¥13,000</td><td>₱5,300</td></tr>
+<tr><th>Shopping in Japan</th><th></th><th></th></tr>
+<tr><td>💊 Drugstore</td><td>~¥15,000</td><td>₱6,200</td></tr>
+<tr><td>🎁 Pasalubong · Anto, Daiwa, Omicho</td><td>~¥15,000</td><td>₱6,200</td></tr>
+<tr><td>✨ Gold leaf gifts</td><td>~¥5,000</td><td>₱2,000</td></tr>
+<tr><td>🧥 Uniqlo Japan</td><td>~¥10,000</td><td>₱4,100</td></tr>
+<tr><td>✈️ Tokyo Banana + Royce</td><td>~¥8,000</td><td>₱3,300</td></tr>
+<tr><th>Philippines side</th><th></th><th></th></tr>
+<tr><td>👗 Outfit shopping (Zalora list about ₱11,830 + Uniqlo HEATTECH)</td><td></td><td>₱15,000</td></tr>
+<tr><td>🛂 Travel tax · not in your PAL ticket · ₱1,620 × 2</td><td></td><td>₱3,240</td></tr>
+<tr><td>🍽️ Airport food · Manila, both days</td><td></td><td>₱4,000</td></tr>
+<tr><th>Cushion</th><th></th><th></th></tr>
+<tr><td>🛟 Surprises</td><td></td><td>₱15,000</td></tr>
+<tr><td><b>GRAND TOTAL</b></td><td><b>¥383,499</b> in Japan</td><td><b>₱195,800</b></td></tr>
+  </table>
+  <div class="bday"><h5>🎯 Have ₱200,000 ready before you leave</h5></div>
+  <table>
+    <tr><th>When</th><th>Pay</th><th>Amount</th></tr>
+<tr><td class="d">Now to Nov</td><td>Outfit shopping in PH</td><td>₱15,000</td></tr>
+<tr><td class="d">Sun Nov 1</td><td>Bullet trains + Skyliner on Klook (card)</td><td>₱29,100</td></tr>
+<tr><td class="d">Before Dec 1</td><td>Agoda charges the 3 hotels (Visa 5193)</td><td>₱31,800</td></tr>
+<tr><td class="d">By Dec 2</td><td><b>Buy ¥120,000 cash</b></td><td>₱49,200</td></tr>
+<tr><td class="d">In Japan</td><td>Card: big meals, wagyu, izakaya, drugstore, Uniqlo</td><td>₱48,500</td></tr>
+<tr><td class="d">Nov 30 to Dec 9</td><td>Travel tax online, airport food</td><td>₱7,200</td></tr>
+<tr><td class="d">Keep</td><td>Cushion, untouched if all goes well</td><td>₱15,000</td></tr>
+  </table>
+  <div class="box"><h5>✅ Already in your PAL ticket</h5><p>Japan departure tax and airport fees. The PH travel tax is not: pay it online by Nov 30.</p></div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d3">
+  <div class="kick">Thursday · December 3</div>
+  <div class="dayscript">Day One</div>
+  <h2 class="title">Daraga → Manila → Tokyo</h2>
+  <div class="card">
+    <div class="head"><h3>Travel Day</h3><div class="ag">Two flights · Skyliner · Sleep in Ueno</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Bicol International Airport</h4>
+        <div class="tl">⏰ Sleep in · be there 9:15 AM</div>
+        <p>Show passports, Japan visa, eTravel QR and travel tax receipts. Ask for your bags to be <b>checked through to Narita (NRT)</b> and both boarding passes. Carry your coat.</p></div></div>
+      <div class="route">
+        <div class="rt">Daraga ── <b>PAL</b> ── Manila T2</div>
+        <div class="rd"><span>🛫 11:15 AM</span><span>🛬 12:25 PM</span></div>
+        <div class="rm">1h 10m</div>
+      </div>
+      <div class="step"><div class="sn">2</div><div><h4>Free PAL shuttle to Terminal 1</h4>
+        <div class="tl">⏰ 12:30 PM · 3 hours to connect</div>
+        <ol class="how">
+          <li>You land at <b>Terminal 2</b>. Don't go to baggage claim: your bags go straight to Narita.</li>
+          <li>Follow the <b>Transfer</b> signs to the <b>Terminal Transfer Waiting Area</b> and board the free PAL shuttle to Terminal 1.</li>
+          <li>At Terminal 1: immigration, then late lunch inside.</li>
+        </ol></div></div>
+      <div class="route">
+        <div class="rt">Manila T1 ── <b>PR432</b> ── Narita T2</div>
+        <div class="rd"><span>🛫 3:25 PM</span><span>🛬 8:35 PM Japan time</span></div>
+        <div class="rm">4h 10m · Japan is 1 hour ahead</div>
+      </div>
+      <div class="step"><div class="sn">3</div><div><h4>Narita T2 → Skyliner → Keisei Ueno</h4>
+        <div class="tl">⏰ ~9:40 PM · every 20 min · last one about 11:00 PM</div>
+        <ol class="how">
+          <li>Immigration and customs: show the <b>Visit Japan Web</b> QR codes. Collect bags. Coats on.</li>
+          <li>Follow the <b>Railways</b> signs down to B1.</li>
+          <li>Blue <b>Keisei</b> counter. Show the <b>Klook Skyliner QR</b> and say: "Skyliner to Ueno, two adults."</li>
+          <li>Your station is called <b>Narita Airport Terminal 2·3</b>. Board at the car number on the ticket.</li>
+          <li>Ride to the <b>last stop, Keisei Ueno</b>. Do not get off at Nippori.</li>
+        </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Keisei+Ueno+Station" target="_blank">📍 Keisei Ueno</a></div></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Walk to the APA</h4>
+        <div class="tl">⏰ ~10:30 PM · 1 min</div>
+        <ol class="how">
+          <li>Exit to street level. The APA is across from the station.</li>
+          <li>Check in with passports.</li>
+        </ol>
+        <div class="links"><a href="https://www.google.com/maps/dir/?api=1&origin=Keisei+Ueno+Station&destination=APA+Hotel+Keisei+Ueno+Ekimae&travelmode=walking" target="_blank">🚶 Station → Hotel</a></div></div></div>
+      <div class="hotel">
+        <h5>🏨 APA Hotel Keisei Ueno-Ekimae · 1 night ✅</h5>
+        <div class="row"><span class="k">Agoda ID</span><span><b>1748558877</b></span></div>
+        <div class="row"><span class="k">Address</span><span>2-14-26 Ueno, Taito-ku · アパホテル京成上野駅前</span></div>
+        <div class="row"><span class="k">Phone</span><span>+81 3-5846-6811</span></div>
+        <div class="row"><span class="k">Walk to</span><span>JR Ueno 5 min · konbini everywhere</span></div>
+        <div class="links"><a href="https://maps.google.com/?q=APA+Hotel+Keisei+Ueno+Ekimae" target="_blank">📍 Map</a><a href="https://www.google.com/maps/search/convenience+store+near+APA+Hotel+Keisei+Ueno+Ekimae" target="_blank">🏪 Nearest konbini</a></div>
+      </div>
+      <div class="meals">
+        <div class="meal"><span class="mk">Morning</span><span>Coffee at home or Bicol Airport</span></div>
+        <div class="meal"><span class="mk">Lunch</span><span>NAIA Terminal 1, after immigration</span></div>
+        <div class="meal"><span class="mk">Dinner</span><span>On the plane, then konbini by the APA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d4">
+  <div class="kick">Friday · December 4</div>
+  <div class="dayscript">Day Two</div>
+  <h2 class="title">Bullet Train to Kanazawa</h2>
+  <div class="card">
+    <div class="head"><h3>Tokyo → Kanazawa</h3><div class="ag">Kagayaki 509 · Check in · Gold leaf · Geisha street at dusk</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Slow morning, then leave the APA</h4>
+        <div class="tl">⏰ Leave 9:45 AM · 5 min walk to JR Ueno</div>
+        <ol class="how">
+          <li>Check out. Walk to <b>JR Ueno, Hirokoji exit (広小路口)</b>.</li>
+          <li>Find a green <b>reserved seat ticket machine</b> by the Central gate. Tap English, scan the Klook ticket QR. It prints Dec 4 and Dec 8 tickets. Keep all of them.</li>
+          <li>Go through the <b>Central gate (中央改札)</b>.</li>
+          <li>Inside, buy ekiben (train bento) and coffee for lunch.</li>
+          <li>Follow the green <b>Shinkansen</b> signs to the <b>Shinkansen transfer gate</b>. Insert tickets, take them back.</li>
+          <li>Go down to <b>B4</b>, tracks <b>19 to 22</b>. Check the board for <b>Kagayaki 509 / かがやき509号</b>.</li>
+          <li>Stand at your car number. Be on the platform by 10:15 AM.</li>
+        </ol>
+        <div class="links"><a href="https://www.google.com/maps/dir/?api=1&origin=APA+Hotel+Keisei+Ueno+Ekimae&destination=JR+Ueno+Station&travelmode=walking" target="_blank">🚶 APA → JR Ueno</a></div></div></div>
+      <div class="route">
+        <div class="rt">Ueno ── <b>Kagayaki 509</b> ── Kanazawa</div>
+        <div class="rd"><span>🚄 10:28 AM · B4</span><span>🏁 12:49 PM</span></div>
+        <div class="rm">2h 21m · All reserved · Big suitcases behind the last row of your car · Lunch on board</div>
+      </div>
+      <div class="step"><div class="sn">2</div><div><h4>Kanazawa Station → Hotel Intergate</h4>
+        <div class="tl">⏰ 1:00 PM · Taxi 7 min</div>
+        <ol class="how">
+          <li>Exit through the <b>East exit (Kenrokuen exit)</b>. Photo at the wooden Tsuzumi-mon gate.</li>
+          <li>Taxi line is right there. Show: <span class="jp">ホテルインターゲート金沢</span></li>
+          <li>Leave bags if the room isn't ready.</li>
+                  </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Tsuzumimon+Gate+Kanazawa" target="_blank">📍 Tsuzumi-mon</a></div></div></div>
+      <div class="hotel">
+        <h5>🏙️ Hotel Intergate Kanazawa · Dec 4 to 8 · 4 nights ✅</h5>
+        <div class="row"><span class="k">Agoda ID</span><span><b>2033478779</b></span></div>
+        <div class="row"><span class="k">Room</span><span>Standard Double, non-smoking</span></div>
+        <div class="row"><span class="k">Address</span><span>2-5 Takaokamachi · 金沢市高岡町2-5</span></div>
+        <div class="row"><span class="k">Phone</span><span>+81 76-260-7200</span></div>
+        <div class="row"><span class="k">Walk to</span><span>Oyama Shrine 5 min · Omicho 7 min · Katamachi 8 min · Itaru 14 min</span></div>
+        <div class="links"><a href="https://maps.google.com/?q=Hotel+Intergate+Kanazawa" target="_blank">📍 Map</a></div>
+      </div>
+      <div class="step"><div class="sn">3</div><div><h4>Taxi to Higashi Chaya</h4>
+        <div class="tl">⏰ 2:15 PM · 6 min</div>
+        <p>Show: <span class="jp">金箔屋さくだ</span> (Kinpakuya Sakuda). It's at the edge of Higashi Chaya.</p></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Gold leaf workshop: Kinpakuya Sakuda</h4>
+        <div class="tl">⏰ 2:30 PM · about 1 hour · open 9 AM to 5 PM</div>
+        <p>Decorate chopsticks or a small plate with real gold leaf. Price list at the counter. Walk in. Gold leaf cosmetics and gifts in the shop too.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Kinpakuya+Sakuda+Higashiyama+Kanazawa" target="_blank">📍 Sakuda</a></div></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Gold leaf soft serve: Hakuichi</h4>
+        <div class="tl">⏰ 3:45 PM · 3 min walk from Sakuda</div>
+        <div class="order">The soft serve wrapped in a whole sheet of gold leaf. Photo time.</div>
+        <div class="links"><a href="https://maps.google.com/?q=Hakuichi+Higashiyama+Store+Kanazawa" target="_blank">📍 Hakuichi</a></div></div></div>
+      <div class="step"><div class="sn">6</div><div><h4>Higashi Chaya at dusk</h4>
+        <div class="tl">⏰ 4:00 to 5:00 PM · sunset ~4:40</div>
+        <p>Wander the teahouse lanes as the lanterns come on. Main street, then the side lanes.</p>
+        <div class="order">🍵 Warm-up dessert: <b>Maccha House</b>, 1 min from Hakuichi. Matcha tiramisu. Open to 6 PM</div>
+        <div class="links"><a href="https://maps.google.com/?q=Higashi+Chaya+District+Kanazawa" target="_blank">📍 Higashi Chaya</a><a href="https://maps.google.com/?q=MACCHA+HOUSE+Kanazawa+Higashi+Chaya" target="_blank">📍 Maccha House</a></div></div></div>
+      <div class="step"><div class="sn">7</div><div><h4>Dinner: Jiyuken</h4>
+        <div class="tl">⏰ 5:00 PM opening · same street</div>
+        <div class="order">Classic Western-style diner. Omurice or hamburg steak.</div>
+        <p>Then taxi home, 6 min. Show: <span class="jp">ホテルインターゲート金沢</span></p>
+        <div class="links"><a href="https://maps.google.com/?q=Jiyuken+Higashiyama+Kanazawa" target="_blank">📍 Jiyuken</a></div></div></div>
+      <div class="meals">
+        <div class="meal"><span class="mk">Breakfast</span><span>Konbini or Ueno cafe</span></div>
+        <div class="meal"><span class="mk">Lunch</span><span>Ekiben on the train</span></div>
+        <div class="meal"><span class="mk">Snack</span><span>Hakuichi gold leaf soft serve</span></div>
+        <div class="meal"><span class="mk">Dinner</span><span>Jiyuken, Higashi Chaya</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d5">
+  <div class="kick">Saturday · December 5 · 🎂 Jenny's 40th</div>
+  <div class="dayscript">Day Three</div>
+  <h2 class="title">The Birthday</h2>
+  <div class="card">
+    <div class="head"><h3>🎂 Slow Morning · Garden · Museum · Crab</h3><div class="ag">Sleep in · All on foot · One outfit all day</div><div class="ribbon">✨ Happy 40th, Jenny ✨</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Sleep in 🎂</h4>
+        <div class="tl">⏰ No alarm · no breakfast</div>
+        <p>Slow birthday morning. Get ready at your own pace. Grab a free coffee from the hotel lounge on the way out.</p></div></div>
+      <div class="step"><div class="sn">2</div><div><h4>Oyama Shrine</h4>
+        <div class="tl">⏰ Leave 10:30 AM · 5 min walk · free</div>
+        <p>The stained-glass gate. Birthday photo here.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Oyama+Shrine+Kanazawa" target="_blank">📍 Oyama Shrine</a></div></div></div>
+      <div class="step"><div class="sn">3</div><div><h4>Kanazawa Castle Park</h4>
+        <div class="tl">⏰ 11:00 AM · footbridge behind the shrine · free</div>
+        <p>Stroll through the park and out the <b>Ishikawa-mon gate</b>. Cross the bridge straight into Kenroku-en.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Kanazawa+Castle+Park" target="_blank">📍 Castle Park</a></div></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Kenroku-en Garden + matcha</h4>
+        <div class="tl">⏰ 11:30 AM · ¥320 (₱130) each, cash · open 8 AM to 5 PM</div>
+        <ol class="how">
+          <li>Enter at the <b>Katsurazaka gate</b> (right after the bridge).</li>
+          <li>Kotoji stone lantern by the pond: the famous photo.</li>
+          <li>The snow ropes (yukitsuri) over the pines.</li>
+          <li><b>Shigure-tei</b> teahouse: matcha and a sweet, your first bite of the day. Open 9 AM to 4:30 PM.</li>
+        </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Kenrokuen+Garden+Kanazawa" target="_blank">📍 Kenroku-en</a><a href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Intergate+Kanazawa&destination=Kenrokuen+Garden+Kanazawa&waypoints=Oyama+Shrine+Kanazawa%7CKanazawa+Castle+Park&travelmode=walking" target="_blank">🚶 Full route</a></div></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Lunch: Grill Otsuka</h4>
+        <div class="tl">⏰ Arrive about 1:00 PM · about 15 min walk from Kenroku-en (or a short taxi) · lunch 11 AM to 2:45 PM</div>
+        <div class="order">Hanton rice (Kanazawa's omurice with fried fish and tartar)</div>
+        <div class="links"><a href="https://maps.google.com/?q=Grill+Otsuka+Katamachi+Kanazawa" target="_blank">📍 Grill Otsuka</a></div></div></div>
+      <div class="step"><div class="sn">6</div><div><h4>21st Century Museum</h4>
+        <div class="tl">⏰ 2:15 PM · 11 min walk back from Otsuka · Saturday open 10 AM to 8 PM</div>
+        <p>Buy the <b>Exhibition Zone</b> ticket at the counter for the Swimming Pool. About 1 hour, no rush.</p>
+        <div class="links"><a href="https://maps.google.com/?q=21st+Century+Museum+of+Contemporary+Art+Kanazawa" target="_blank">📍 Museum</a></div></div></div>
+      <div class="step"><div class="sn">7</div><div><h4>Birthday dessert: Fruits Parlor Murahata</h4>
+        <div class="tl">⏰ About 3:30 PM · short taxi from the museum, or about 20 min walk · open 10 AM to 6:30 PM</div>
+        <div class="order">🍓 Strawberry parfait. December is strawberry season. One parfait is big enough to share.</div>
+        <p>It's on the 2nd floor. Then walk back to the hotel (it's near Omicho, like the hotel). Rest and freshen up until 6:40 PM.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Fruits+Parlor+Murahata+Musashimachi" target="_blank">📍 Murahata</a></div></div></div>
+      <div class="bday">
+        <h5>🦀 7:00 PM · 40th Birthday Dinner · Itaru Honten (izakaya)</h5>
+        <p>Leave the hotel 6:40 PM. 14 min walk or taxi 6 min (show <span class="jp">いたる本店</span>). Order snow crab, nodoguro and Ishikawa sake.</p>
+                <div class="row"><span class="k">Hours</span><span>5:30 to 10:30 PM · closed Sundays</span></div>
+        <div class="row"><span class="k">Phone</span><span>+81 76-221-4194 · 3-8 Kakinokibatake</span></div>
+        <div class="row"><span class="k">Plan B</span><span>No booking? Be at the door by 5:20 PM and walk in.</span></div>
+        <div class="links"><a href="https://maps.google.com/?q=Itaru+Honten+Kanazawa" target="_blank">📍 Itaru Honten</a><a href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Intergate+Kanazawa&destination=Itaru+Honten+Kanazawa&travelmode=walking" target="_blank">🚶 Hotel → Itaru</a></div>
+      </div>
+      <div class="meals">
+        <div class="meal"><span class="mk">Morning</span><span>Sleep in · lounge coffee</span></div>
+        <div class="meal"><span class="mk">Snack</span><span>Matcha at Shigure-tei</span></div>
+        <div class="meal"><span class="mk">Lunch</span><span>Grill Otsuka</span></div>
+        <div class="meal"><span class="mk">Dessert</span><span>Strawberry parfait, Murahata</span></div>
+        <div class="meal"><span class="mk">Dinner</span><span>Izakaya: Itaru Honten 🦀</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d6">
+  <div class="kick">Sunday · December 6</div>
+  <div class="dayscript">Day Four</div>
+  <h2 class="title">Shirakawa-go Snow Village</h2>
+  <div class="card">
+    <div class="head"><h3>Day Trip</h3><div class="ag">Bus from the WEST exit · Day bag only</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Taxi to Kanazawa Station WEST exit</h4>
+        <div class="tl">⏰ Sleep in · taxi 10:40 AM · grab a free lounge coffee on the way out</div>
+        <ol class="how">
+          <li>Show: <span class="jp">金沢駅 西口</span> (West exit, not the Tsuzumi-mon side).</li>
+          <li>Find <b>Bus Stop 4</b>. Be there by 10:55 AM.</li>
+          <li>Show the Japan Bus Online QR to the driver.</li>
+        </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Kanazawa+Station+West+Exit+Bus+Stop" target="_blank">📍 West exit buses</a></div></div></div>
+      <div class="route">
+        <div class="rt">Kanazawa ── <b>Highway Bus</b> ── Shirakawa-go</div>
+        <div class="rd"><span>🚌 11:10 AM · West Exit stop 4</span><span>🏁 12:25 PM · Shirakawa-go</span></div>
+        <div class="rm">Reserved · 1h 15m</div>
+      </div>
+      <div class="step"><div class="sn">2</div><div><h4>Lunch first: Irori</h4>
+        <div class="tl">⏰ 12:35 PM · Sunday lunch 10 AM to 2 PM</div>
+        <div class="order">Hida beef hoba miso set by the sunken hearth. Warm, cozy, wagyu.</div>
+        <div class="links"><a href="https://maps.google.com/?q=Irori+374-1+Ogimachi+Shirakawa" target="_blank">📍 Irori</a></div></div></div>
+      <div class="step"><div class="sn">3</div><div><h4>Shuttle up to Shiroyama Viewpoint</h4>
+        <div class="tl">⏰ About 1:30 PM · about ¥300 each way, cash, small coins · every 20 min · last one 2:40 PM</div>
+        <ol class="how">
+          <li>The shuttle stop is in front of <b>Wada House</b>. Runs 10:00 AM to 2:40 PM, no buses 12 to 1 PM.</li>
+          <li>Photos of the whole village from the top.</li>
+          <li>Walk down the path, 15 to 20 min (take the shuttle down if it's icy).</li>
+        </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Shiroyama+Viewpoint+Shirakawago" target="_blank">📍 Shiroyama</a></div></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Wada House</h4>
+        <div class="tl">⏰ About 2:30 PM · ¥400 (₱160) each · 9 AM to 5 PM</div>
+        <p>The biggest thatched house you can walk inside. Shoes off.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Wada+House+Shirakawa-go" target="_blank">📍 Wada House</a></div></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Snow walk + snacks at golden hour</h4>
+        <div class="tl">⏰ 3:00 PM · sunset about 4:40 PM</div>
+        <p>Deai suspension bridge, rice-field paths, gohei mochi and hot amazake from the stalls. The late light on the snowy roofs is the prettiest part of the day.</p></div></div>
+      <div class="step"><div class="sn">6</div><div><h4>Bus back</h4>
+        <div class="tl">⏰ At the bus terminal 3:40 PM</div>
+        <p>Same place the morning bus dropped you. Show the Japan Bus Online QR.</p></div></div>
+      <div class="route">
+        <div class="rt">Shirakawa-go ── <b>Highway Bus</b> ── Kanazawa</div>
+        <div class="rd"><span>🚌 3:55 PM</span><span>🏁 5:20 PM · West Exit</span></div>
+      </div>
+      <div class="step"><div class="sn">7</div><div><h4>Taxi to the hotel, warm up</h4>
+        <div class="tl">⏰ 5:30 PM · East exit taxi stand · 7 min</div>
+        <p>Hot shower, dry socks, rest. Too tired? Hachiban Ramen in the station instead.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Hachiban+Ramen+Kanazawa+Station" target="_blank">📍 Hachiban (optional)</a></div></div></div>
+      <div class="step"><div class="sn">8</div><div><h4>🍢 Izakaya dinner: Akadama Honten</h4>
+        <div class="tl">⏰ Leave the hotel 7:00 PM · 14 min walk or taxi 5 min · Sunday 4 to 10 PM · closed Mondays</div>
+        <div class="order">Kanazawa oden: daikon, egg, kuruma-fu and, in winter, <b>kani-men</b> (crab oden). Hot sake. Say: "Kani-men, arimasu ka?"</div>
+        <div class="links"><a href="https://maps.google.com/?q=Akadama+Honten+Kanazawa" target="_blank">📍 Akadama</a><a href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Intergate+Kanazawa&destination=Akadama+Honten+Kanazawa&travelmode=walking" target="_blank">🚶 Hotel → Akadama</a></div></div></div>
+      <div class="note">Icy paths. Grip shoes, gloves, beanie. In heavy snow the walking path to Shiroyama closes. Then use the shuttle both ways.</div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d7">
+  <div class="kick">Monday · December 7</div>
+  <div class="dayscript">Day Five</div>
+  <h2 class="title">Market, Samurai Lanes, Shopping</h2>
+  <div class="card">
+    <div class="head"><h3>Free Day in Kanazawa</h3><div class="ag">Sleep in · All walking · Sushi, soft serve, wagyu</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Brunch: Mori Mori Sushi, Omicho Market</h4>
+        <div class="tl">⏰ Sleep in · leave 10:45 AM · 7 min walk</div>
+        <ol class="how">
+          <li>Take a number at the door, then browse the stalls while you wait.</li>
+          <li>Order nodoguro, amaebi (sweet shrimp), crab.</li>
+          <li>Then walk the market stalls. Grilled scallops and crab croquettes. Cash.</li>
+        </ol>
+        <div class="links"><a href="https://maps.google.com/?q=Mori+Mori+Sushi+Omicho" target="_blank">📍 Mori Mori</a><a href="https://maps.google.com/?q=Omicho+Market+Kanazawa" target="_blank">📍 Omicho</a></div></div></div>
+      <div class="step"><div class="sn">2</div><div><h4>Nagamachi + Nomura-ke Samurai House</h4>
+        <div class="tl">⏰ About 12:45 PM · 17 min walk · 8:30 AM to 4 PM</div>
+        <p>Earthen walls and canals. Inside Nomura-ke: a tiny perfect garden. Fee at the door, cash.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Nomura-ke+Samurai+Heritage+Residence" target="_blank">📍 Nomura-ke</a><a href="https://www.google.com/maps/dir/?api=1&origin=Omicho+Market+Kanazawa&destination=Nomura-ke+Samurai+Heritage+Residence&travelmode=walking" target="_blank">🚶 Omicho → Nomura-ke</a></div></div></div>
+      <div class="step"><div class="sn">3</div><div><h4>Optional: Kanazawa curry at Turban Curry</h4>
+        <div class="tl">⏰ Only if you are hungry · 10 min walk from Nomura-ke · 11 AM to 8 PM</div>
+        <div class="order">Thick Kanazawa curry with katsu. Ticket machine outside. Share a small one: wagyu is tonight.</div>
+        <div class="links"><a href="https://maps.google.com/?q=Turban+Curry+Main+Store+Kanazawa" target="_blank">📍 Turban Curry</a></div></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>Drugstore + Daiwa</h4>
+        <div class="tl">⏰ About 2:00 PM · Katamachi · bring passports</div>
+        <p>Skincare and medicine at the Katamachi drugstores, tax-free over ¥5,000 (₱2,050). Daiwa food basement for boxed pasalubong.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Daiwa+Korinbo+Store" target="_blank">📍 Daiwa</a><a href="https://www.google.com/maps/search/drugstore+Katamachi+Kanazawa" target="_blank">💊 Drugstores</a></div></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Dessert: Nodaya Tea Shop</h4>
+        <div class="tl">⏰ About 3:30 PM · Tatemachi, 8 min from Turban Curry · 9:30 AM to 6:30 PM</div>
+        <div class="order">🍦 Bocha (roasted tea) soft serve.</div>
+        <p>Then walk back to the hotel, 17 min. Drop the shopping, rest.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Nodaya+Tea+Shop+Tatemachi+Kanazawa" target="_blank">📍 Nodaya</a></div></div></div>
+      <div class="step"><div class="sn">6</div><div><h4>🥩 Wagyu dinner: Ushimaru</h4>
+        <div class="tl">⏰ Leave 5:45 PM · 12 min walk · open 5 PM to 2 AM, Mondays too</div>
+        <div class="order">A5 Noto wagyu on your own little grill. Order the marbled cuts (霜降り): sirloin, ribeye, zabuton. A few seconds per side.</div>
+        <p>Say: "Noto-gyu A5, onegai shimasu."</p>
+        <div class="links"><a href="https://maps.google.com/?q=Ushimaru+Kiguramachi+Kanazawa" target="_blank">📍 Ushimaru</a><a href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Intergate+Kanazawa&destination=Ushimaru+Kiguramachi+Kanazawa&travelmode=walking" target="_blank">🚶 Hotel → Ushimaru</a></div></div></div>
+      <div class="meals">
+        <div class="meal"><span class="mk">Brunch</span><span>Mori Mori Sushi + Omicho stalls</span></div>
+        <div class="meal"><span class="mk">Snack</span><span>Kanazawa curry, Turban (optional)</span></div>
+        <div class="meal"><span class="mk">Dessert</span><span>Bocha soft serve, Nodaya</span></div>
+        <div class="meal"><span class="mk">Dinner</span><span>A5 Noto wagyu, Ushimaru 🥩</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d8">
+  <div class="kick">Tuesday · December 8</div>
+  <div class="dayscript">Day Six</div>
+  <h2 class="title">Kanazawa → Narita</h2>
+  <div class="card">
+    <div class="head"><h3>Travel Day</h3><div class="ag">Kagayaki 534 · Skyliner · Airport hotel</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Sleep in, pack, check out</h4>
+        <div class="tl">⏰ Checkout 11:00 AM · taxi 7 min · show <span class="jp">金沢駅 東口</span></div></div></div>
+      <div class="step"><div class="sn">2</div><div><h4>Last shopping at the station</h4>
+        <div class="tl">⏰ 11:15 AM to 1:20 PM</div>
+        <p>Anto food hall for gifts. Uniqlo is 2 min from the East exit, opens 10 AM. Buy ekiben for lunch on the train.</p>
+        <div class="links"><a href="https://maps.google.com/?q=Kanazawa+Hyakubangai+Anto" target="_blank">📍 Anto</a><a href="https://maps.google.com/?q=UNIQLO+3-13+Horikawashinmachi+Kanazawa" target="_blank">📍 Uniqlo</a></div></div></div>
+      <div class="step"><div class="sn">3</div><div><h4>Through the JR gate</h4>
+        <div class="tl">⏰ 1:30 PM</div>
+        <p>Use the ticket printed in Ueno. Follow the <b>Hokuriku Shinkansen</b> signs. Find <b>かがやき534号</b> on the board for the track.</p></div></div>
+      <div class="route">
+        <div class="rt">Kanazawa ── <b>Kagayaki 534</b> ── Ueno</div>
+        <div class="rd"><span>🚄 1:50 PM</span><span>🏁 4:14 PM · JR Ueno</span></div>
+        <div class="rm">Get off at <b>Ueno</b>, not Tokyo</div>
+      </div>
+      <div class="step"><div class="sn">4</div><div><h4>JR Ueno → Keisei Ueno → Skyliner</h4>
+        <div class="tl">⏰ 4:15 PM · ~7 min walk · Skyliners every 20 min</div>
+        <ol class="how">
+          <li>Exit through the <b>Shinobazu exit (不忍口)</b>. Cross the street.</li>
+          <li>Keisei Ueno is the station across the road. Blue Keisei counter: show the <b>Klook Skyliner QR</b>, "Skyliner to Narita Airport, two adults."</li>
+          <li>Get off at <b>Narita Airport Terminal 2·3</b>, about 45 min. PAL flies from Terminal 2.</li>
+        </ol>
+        <div class="links"><a href="https://www.google.com/maps/dir/?api=1&origin=JR+Ueno+Station&destination=Keisei+Ueno+Station&travelmode=walking" target="_blank">🚶 JR → Keisei Ueno</a></div></div></div>
+      <div class="step"><div class="sn">5</div><div><h4>Dinner at Terminal 2, then shuttle</h4>
+        <div class="tl">⏰ ~5:45 PM · free Toyoko shuttle about every 20 min</div>
+        <ol class="how">
+          <li>Eat at the Terminal 2 restaurants first.</li>
+          <li>Go to <b>1F, Central exit</b>. Cross the crosswalk; <b>Bus Stop 31-B</b> is just past the taxi stand.</li>
+          <li>Board the <b>Toyoko Inn</b> shuttle.</li>
+        </ol></div></div>
+      <div class="hotel">
+        <h5>🛏️ Toyoko Inn Narita Airport Honkan · 1 night ✅</h5>
+        <div class="row"><span class="k">Agoda ID</span><span><b>1748556028</b></span></div>
+        <div class="row"><span class="k">Room</span><span>Economy Twin, non-smoking · free breakfast · free shuttle</span></div>
+        <div class="row"><span class="k">Address</span><span>560 Tokko, Narita · 東横INN成田空港本館</span></div>
+        <div class="row"><span class="k">Nearby</span><span>Nothing to walk to. Eat at Terminal 2 before the shuttle.</span></div>
+        <div class="links"><a href="https://maps.google.com/?q=Toyoko+Inn+Narita+Airport+Honkan" target="_blank">📍 Map</a></div>
+      </div>
+      <div class="meals">
+        <div class="meal"><span class="mk">Morning</span><span>Lounge coffee</span></div>
+        <div class="meal"><span class="mk">Lunch</span><span>Ekiben on the train</span></div>
+        <div class="meal"><span class="mk">Dinner</span><span>Narita Terminal 2</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="d9">
+  <div class="kick">Wednesday · December 9</div>
+  <div class="dayscript">Day Seven</div>
+  <h2 class="title">Home</h2>
+  <div class="card">
+    <div class="head"><h3>Narita → Manila → Daraga</h3><div class="ag">Shuttle · Two flights</div></div>
+    <div class="body">
+      <div class="step"><div class="sn">1</div><div><h4>Breakfast → shuttle to Terminal 2</h4>
+        <div class="tl">⏰ Shuttle 6:30 AM · runs every 20 min from 4:50 AM</div>
+        <ol class="how">
+          <li>Free breakfast. Check out.</li>
+          <li>Shuttle to <b>Terminal 2</b> (PAL).</li>
+          <li>Ask for your bags to be <b>checked through to Daraga (DRP)</b> and both boarding passes.</li>
+          <li>After security: Tokyo Banana and Royce. Ask for a cooler bag for Royce.</li>
+          <li>Have the eTravel (arriving PH) QR ready for Manila.</li>
+          <li>Gate by 8:40 AM.</li>
+        </ol></div></div>
+      <div class="route">
+        <div class="rt">Narita T2 ── <b>PR431</b> ── Manila T1</div>
+        <div class="rd"><span>🛫 9:20 AM</span><span>🛬 1:40 PM</span></div>
+        <div class="rm">5h 20m · lands at Terminal 1</div>
+      </div>
+      <div class="step"><div class="sn">2</div><div><h4>Free PAL shuttle to Terminal 2</h4>
+        <div class="tl">⏰ 1:40 PM · almost 4 hours to connect</div>
+        <ol class="how">
+          <li>Immigration with the eTravel QR, then customs.</li>
+          <li>Follow the PAL <b>Transfer</b> signs and take the free shuttle to <b>Terminal 2</b>.</li>
+          <li>Snack at Terminal 2, gate by 5:05 PM.</li>
+        </ol></div></div>
+      <div class="route">
+        <div class="rt">Manila T2 ── <b>PAL</b> ── Daraga</div>
+        <div class="rd"><span>🛫 5:35 PM</span><span>🛬 6:45 PM · home 🏡</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="eat">
+  <div class="kick">Every Meal</div>
+  <h2 class="title">Where We Eat</h2>
+  <table>
+    <tr><th>Day</th><th>Meal</th><th>Hours</th></tr>
+    <tr><td class="d">Fri 4</td><td>Ekiben on train · Hakuichi soft serve · Maccha House · <a href="https://maps.google.com/?q=Jiyuken+Higashiyama+Kanazawa" target="_blank">Jiyuken</a></td><td>Jiyuken 5 to 9 PM</td></tr>
+    <tr><td class="d">Sat 5</td><td>Shigure-tei matcha · <a href="https://maps.google.com/?q=Grill+Otsuka+Katamachi+Kanazawa" target="_blank">Grill Otsuka</a> · <a href="https://maps.google.com/?q=Fruits+Parlor+Murahata+Musashimachi" target="_blank">Murahata parfait</a> · <a href="https://maps.google.com/?q=Itaru+Honten+Kanazawa" target="_blank">Itaru Honten</a></td><td>Otsuka lunch to 2:45 PM, closed Wed · Itaru 5:30 to 10:30 PM</td></tr>
+    <tr><td class="d">Sun 6</td><td><a href="https://maps.google.com/?q=Irori+374-1+Ogimachi+Shirakawa" target="_blank">Irori</a> · <a href="https://maps.google.com/?q=Akadama+Honten+Kanazawa" target="_blank">Akadama oden izakaya</a></td><td>Irori 10 AM to 2 PM · Akadama Sunday 4 to 10 PM</td></tr>
+    <tr><td class="d">Mon 7</td><td><a href="https://maps.google.com/?q=Mori+Mori+Sushi+Omicho" target="_blank">Mori Mori Sushi</a> · <a href="https://maps.google.com/?q=Turban+Curry+Main+Store+Kanazawa" target="_blank">Turban Curry</a> · <a href="https://maps.google.com/?q=Nodaya+Tea+Shop+Tatemachi+Kanazawa" target="_blank">Nodaya</a> · <a href="https://maps.google.com/?q=Ushimaru+Kiguramachi+Kanazawa" target="_blank">Ushimaru</a></td><td>Mori Mori 8 AM to 4 PM · Turban 11 AM to 8 PM · Nodaya to 6:30 PM · Ushimaru 5 PM to 2 AM</td></tr>
+    <tr><td class="d">Tue 8</td><td>Ekiben · Narita T2</td><td></td></tr>
+  </table>
+  <div class="box"><h5>✅ Try-it-all checklist</h5><p>🦀 Kobako snow crab (Itaru) · 🐟 Nodoguro (Itaru, Mori Mori) · 🍣 Omicho sushi · 🍳 Hanton rice (Otsuka) · 🍛 Kanazawa curry (Turban) · 🥩 Noto wagyu (Ushimaru) · 🥩 Hida beef (Irori) · 🍜 Hachiban ramen (optional, station) · 🍳 Omurice (Jiyuken) · 🍢 Kanazawa oden (Akadama) · ✨ Gold leaf soft serve (Hakuichi) · 🍵 Matcha tiramisu (Maccha House) · 🍵 Matcha + wagashi (Shigure-tei) · 🍓 Strawberry parfait (Murahata) · 🍦 Bocha soft serve (Nodaya) · 🍡 Gohei mochi (Shirakawa-go) · 🍱 Ekiben · 🍌 Tokyo Banana + Royce</p></div>
+  <div class="box"><h5>☔ Rain plan</h5><p>Early December is often showery. Carry the umbrella daily. On a wet day go indoors first: museum, Omicho, Daiwa, Higashi Chaya teahouses.</p></div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="shop">
+  <div class="kick">Shopping</div>
+  <h2 class="title">Where to Shop</h2>
+  <div class="box"><h5>✨ Gold leaf · Higashi Chaya · Dec 4</h5><p>Sakuda and Hakuichi: gold leaf masks, cosmetics, chopsticks, sweets.</p></div>
+  <div class="box"><h5>🛍️ Katamachi + Daiwa · Dec 7</h5><p>Drugstores and Daiwa food basement. Daiwa 10 AM to 7 PM. Passports for tax-free.</p></div>
+  <div class="box"><h5>🎁 Anto · inside Kanazawa Station · Dec 7 and 8</h5><p>Kaga sweets, hojicha, sake, gift boxes.</p></div>
+  <div class="box"><h5>🧥 Uniqlo · 2 min from East exit</h5><p>10 AM to 8 PM. Tax-free with passport.</p></div>
+  <div class="box"><h5>✈️ Narita Terminal 2 · Dec 9</h5><p>Tokyo Banana and Royce after security.</p></div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="tips">
+  <div class="kick">Good to Know</div>
+  <h2 class="title">Tips</h2>
+  <table>
+    <tr><th>Place</th><th>December</th></tr>
+    <tr><td>Tokyo</td><td>4 to 10°C</td></tr>
+    <tr><td>Kanazawa</td><td>2 to 10°C, often rain or sleet</td></tr>
+    <tr><td>Shirakawa-go</td><td>about -2 to 4°C, snow possible</td></tr>
+  </table>
+  <div class="box"><h5>👗 Outfits</h5><p>Every look, day by day, is in the separate Outfit guide.</p></div>
+  <div class="box"><h5>🧳 Luggage</h5><p>2 checked bags each, 23 kg per bag.</p></div>
+    <div class="box"><h5>🆘 Emergency</h5><p>Police 110 · Ambulance and fire 119 · Lost passport: go to the hotel front desk first; they will call for you.</p></div>
+  <div class="box"><h5>🔥 Kairo heat packs</h5><p>Any konbini. Stick one inside your coat on Dec 6.</p></div>
+</section>
+
+<div class="sparkle"><span>✦</span><span>✧</span><span>✦</span></div>
+<section class="wrap" id="links">
+  <div class="kick">One Place</div>
+  <h2 class="title">All Links</h2>
+  <div class="wall">
+    <a href="https://maps.google.com/?q=APA+Hotel+Keisei+Ueno+Ekimae" target="_blank">🏨 APA Ueno</a>
+    <a href="https://maps.google.com/?q=Hotel+Intergate+Kanazawa" target="_blank">🏙️ Intergate</a>
+    <a href="https://maps.google.com/?q=Toyoko+Inn+Narita+Airport+Honkan" target="_blank">🛏️ Toyoko Narita</a>
+    <a href="https://maps.google.com/?q=Keisei+Ueno+Station" target="_blank">🚄 Keisei Ueno</a>
+    <a href="https://maps.google.com/?q=JR+Ueno+Station" target="_blank">🚄 JR Ueno</a>
+    <a href="https://maps.google.com/?q=Kanazawa+Station" target="_blank">🚆 Kanazawa Station</a>
+    <a href="https://maps.google.com/?q=Kanazawa+Station+West+Exit+Bus+Stop" target="_blank">🚌 West exit buses</a>
+    <a href="https://maps.google.com/?q=Kinpakuya+Sakuda+Higashiyama+Kanazawa" target="_blank">✨ Sakuda</a>
+    <a href="https://maps.google.com/?q=Hakuichi+Higashiyama+Store+Kanazawa" target="_blank">🍦 Hakuichi</a>
+    <a href="https://maps.google.com/?q=Higashi+Chaya+District+Kanazawa" target="_blank">🏮 Higashi Chaya</a>
+    <a href="https://maps.google.com/?q=Jiyuken+Higashiyama+Kanazawa" target="_blank">🍳 Jiyuken</a>
+    <a href="https://maps.google.com/?q=Oyama+Shrine+Kanazawa" target="_blank">⛩️ Oyama Shrine</a>
+    <a href="https://maps.google.com/?q=Kanazawa+Castle+Park" target="_blank">🏯 Castle Park</a>
+    <a href="https://maps.google.com/?q=Kenrokuen+Garden+Kanazawa" target="_blank">🌲 Kenroku-en</a>
+    <a href="https://maps.google.com/?q=21st+Century+Museum+of+Contemporary+Art+Kanazawa" target="_blank">🏛️ 21st Century Museum</a>
+    <a href="https://maps.google.com/?q=Grill+Otsuka+Katamachi+Kanazawa" target="_blank">🍛 Grill Otsuka</a>
+    <a href="https://maps.google.com/?q=Itaru+Honten+Kanazawa" target="_blank">🦀 Itaru Honten</a>
+    <a href="https://maps.google.com/?q=Shiroyama+Viewpoint+Shirakawago" target="_blank">🏔️ Shiroyama</a>
+    <a href="https://maps.google.com/?q=Wada+House+Shirakawa-go" target="_blank">🛖 Wada House</a>
+    <a href="https://maps.google.com/?q=Irori+374-1+Ogimachi+Shirakawa" target="_blank">🥩 Irori</a>
+    <a href="https://maps.google.com/?q=Mori+Mori+Sushi+Omicho" target="_blank">🍣 Mori Mori</a>
+    <a href="https://maps.google.com/?q=Nomura-ke+Samurai+Heritage+Residence" target="_blank">🏯 Nomura-ke</a>
+    <a href="https://maps.google.com/?q=Daiwa+Korinbo+Store" target="_blank">🛍️ Daiwa</a>
+    <a href="https://maps.google.com/?q=Kanazawa+Hyakubangai+Anto" target="_blank">🎁 Anto</a>
+    <a href="https://maps.google.com/?q=Ushimaru+Kiguramachi+Kanazawa" target="_blank">🥩 Ushimaru</a>
+    <a href="https://maps.google.com/?q=Turban+Curry+Main+Store+Kanazawa" target="_blank">🍛 Turban Curry</a>
+    <a href="https://maps.google.com/?q=Fruits+Parlor+Murahata+Musashimachi" target="_blank">🍓 Murahata</a>
+    <a href="https://maps.google.com/?q=Nodaya+Tea+Shop+Tatemachi+Kanazawa" target="_blank">🍦 Nodaya</a>
+    <a href="https://maps.google.com/?q=MACCHA+HOUSE+Kanazawa+Higashi+Chaya" target="_blank">🍵 Maccha House</a>
+    <a href="https://maps.google.com/?q=Akadama+Honten+Kanazawa" target="_blank">🍢 Akadama</a>
+    <a href="https://www.klook.com/en-PH/" target="_blank">🎫 Klook</a>
+    <a href="https://japanbusonline.com/en/AreaSearch2/4170000/4162019" target="_blank">🚌 Bus booking</a>
+    <a href="https://etravel.gov.ph" target="_blank">🛂 eTravel</a>
+    <a href="https://shirakawa-going.jp/en/" target="_blank">❄️ Village Webcam</a>
+  </div>
+</section>
+
+<footer>
+  <div class="moon">🌙</div>
+  <div class="script">✦ Happy 40th, Jenny ✦</div><div style="margin:6px 0 10px;color:#e6c77d;letter-spacing:.3em;font-size:11px">MAY THIS YEAR SPARKLE</div>
+  December 3 to 9, 2026 · Tokyo · Kanazawa · Shirakawa-go · PAL YWL8A7
+</footer>
+
+</body>
+</html>
